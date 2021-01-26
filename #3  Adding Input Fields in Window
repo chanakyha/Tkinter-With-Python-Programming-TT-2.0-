@@ -1,0 +1,20 @@
+from tkinter import *
+window = Tk()
+window.title("Programming TT 2.0")
+window.geometry("300x300")
+window.resizable(0,0)
+
+
+def clicked():
+    inputed_value = inp.get()
+    Label(window, text=inputed_value, font=("Arial Bold",17)).pack()
+
+
+
+inp = Entry(window)
+inp.pack(pady=20)
+
+bt = Button(window, text="Enter", padx=50, pady=50, command=clicked)
+bt.pack()
+
+window.mainloop()
