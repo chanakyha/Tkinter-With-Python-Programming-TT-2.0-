@@ -1,0 +1,17 @@
+#Importing Tkinter Moduele
+from tkinter import *
+from PIL  import ImageTk,Image
+#Window Creation
+window = Tk()
+window.geometry("300x300")
+window.iconbitmap('logo.ico')
+
+img_load = ImageTk.PhotoImage(Image.open('logo_img.png'))  #Loading The Image File
+lb = Label(image=img_load) #Placing the Image in Label
+lb.pack(pady=30) #Placing the Label in Window
+
+#Exit Button
+bt = Button(window, text="Exit", command=window.quit)
+bt.pack(pady=20)
+
+window.mainloop()
