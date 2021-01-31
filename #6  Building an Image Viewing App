@@ -1,0 +1,49 @@
+#Importing Tkinter Moduele
+from tkinter import *
+from PIL  import ImageTk,Image
+#Building Up the screen
+window = Tk()
+window.title("Programming TT 2.0")
+window.iconbitmap('logo.ico')
+
+#Loading Up the Images
+img1 = ImageTk.PhotoImage(Image.open('images/img1.jpg'))
+img2 = ImageTk.PhotoImage(Image.open('images/img2.jpg'))
+img3 = ImageTk.PhotoImage(Image.open('images/img3.png'))
+img4 = ImageTk.PhotoImage(Image.open('images/img4.jpg'))
+img5 = ImageTk.PhotoImage(Image.open('images/img5.png'))
+img6 = ImageTk.PhotoImage(Image.open('images/img6.png'))
+#Index of Present Image
+image_index = 0
+#List Of Loaded Images
+total_images = [img1,img2,img3,img4,img5,img6]
+lb = Label(image=total_images[0])
+lb.grid(row=0, column=0, columnspan=3)
+
+def button(button_no):
+	global image_index
+	global lb
+	if button_no == 1:
+		if len(total_images) -1 == image_index:
+			image_index = 0
+		else:
+			image_index +=1
+		lb.config(image=total_images[image_index])
+	elif button_no == 2:
+		if len(total_images) -1 == image_index:
+			image_index = 0
+		else:
+			image_index -= 1
+		lb.config(image=total_images[image_index])
+
+bt_forward = Button(window, text=">>",command=lambda:button(1))
+bt_exit = Button(window, text="Exit", command=exit)
+bt_back = Button(window, text="<<", command=lambda:button(2))
+#Placing the widgest in window
+bt_forward.grid(row=1, column=2)
+bt_exit.grid(row=1, column=1)
+bt_back.grid(row=1, column=0)
+
+
+
+window.mainloop()
