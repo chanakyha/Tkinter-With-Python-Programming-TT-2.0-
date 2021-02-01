@@ -1,0 +1,17 @@
+#Importing Tkinter Moduele
+from tkinter import *
+from PIL  import ImageTk,Image
+#Building Up the screen
+window = Tk()
+window.title("Programming TT 2.0")
+window.iconbitmap('logo.ico')
+#Creating A Frame
+fr = LabelFrame(window, text="This is my Frame", bd=6)
+fr.pack(pady=20)
+
+#Creating a Label
+lb = Label(fr, text="Created A frame", font=("Arial Bold",20))
+lb. pack()
+
+
+window.mainloop()
