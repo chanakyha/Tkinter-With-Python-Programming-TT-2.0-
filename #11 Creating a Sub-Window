@@ -1,0 +1,22 @@
+#Importing Tkinter Module
+from tkinter import *
+from tkinter import messagebox
+from PIL  import ImageTk,Image
+#Building Up the screen
+window = Tk()
+window.title("Programming TT 2.0")
+window.iconbitmap('logo.ico')
+
+def secon_window():
+	top = Toplevel()
+	top.title("Second Window")
+	top.iconbitmap('logo.ico')
+	Label(top, text="My Scond Window",font=("Arial Bold",35)).pack(pady=50)
+
+
+
+Label(window, text="Parent Window", font=("Arial Bold",35)).pack(pady=50)
+bt = Button(window, text="Enter", command=secon_window)
+bt.pack()
+
+window.mainloop()
