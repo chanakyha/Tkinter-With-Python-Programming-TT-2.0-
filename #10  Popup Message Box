@@ -1,0 +1,20 @@
+#Importing Tkinter Module
+from tkinter import *
+from tkinter import messagebox
+from PIL  import ImageTk,Image
+#Building Up the screen
+window = Tk()
+window.title("Programming TT 2.0")
+window.iconbitmap('logo.ico')
+
+
+#   askquestion,askyesno,showinfo,showerror,showwarning,askokcancel
+def popup_c():
+	response = messagebox.askokcancel("Alert!","Subscribe to PTT 2.0 Channel")
+
+	Label(window, text=response, font=("Arial Bold",20)).pack()
+
+bt= Button(window, text="Popup", command=popup_c)
+bt.pack()
+
+window.mainloop()
