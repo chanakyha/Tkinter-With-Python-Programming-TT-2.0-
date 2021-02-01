@@ -1,0 +1,30 @@
+#Importing Tkinter Module
+from tkinter import *
+from tkinter import filedialog
+from PIL  import ImageTk,Image
+#Building Up the screen
+window = Tk()
+window.title("Programming TT 2.0")
+window.iconbitmap('logo.ico')
+
+def open_file():
+	global img
+	window.filename = filedialog.askopenfilename(
+						initialdir="C:",
+						title="Select an Image",
+						filetypes=(("Png Files","*.png"),("All Files","*.*"))
+						)
+	#Label(window, text=window.filename).pack()
+	top = Toplevel()
+	img = ImageTk.PhotoImage(Image.open(str(window.filename)))
+	lb_top = Label(top,image=img)
+	lb_top.pack()
+
+
+lb = Label(window, text="Select an Image", font=("Arial Bold",17))
+lb.pack(pady=20)
+bt = Button(window, text="Enter", command=open_file)
+bt.pack(pady=10)
+
+
+window.mainloop()
